@@ -36,7 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with Selenium - Test Box
       working-directory: Selenium
-      only: 
-        - DQTP-5-Text-Box
       run: |
         python3 test_text_box.py
