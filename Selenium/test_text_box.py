@@ -1,12 +1,17 @@
 import pytest
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+
 from visual_comparison.utils import ImageComparisonUtil
 
 import time
@@ -131,7 +136,8 @@ def test_text_box_title(chrome_webdriver):
         
     #STEP 6: 
     submit_button = WebDriverWait(chrome_webdriver, timeout=5).until(EC.element_to_be_clickable((By.ID, 'submit')))
-    submit_button.click()
+    action = ActionChains(chrome_webdriver)
+    action.move_to_element(submit_button).click().perform()
 
     visual_comparison(chrome_webdriver, element_id= "output")
     
