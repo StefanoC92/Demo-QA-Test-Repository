@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "DQTP-5-Text-Box" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "DQTP-5-Text-Box" ]
 
 permissions:
   contents: read
@@ -37,4 +37,4 @@ jobs:
     - name: Test with Selenium - Test Box
       working-directory: Selenium
       run: |
-        pytest text_text_box.py
+        pytest test_text_box.py
