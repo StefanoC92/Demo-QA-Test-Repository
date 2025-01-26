@@ -75,11 +75,6 @@ def test_text_box_title(chrome_webdriver):
     #STEP 1:
     chrome_webdriver.get("https://demoqa.com/text-box")
 
-    # #Check page title (By Tag Name)
-    # heading1 = chrome_webdriver.find_element(By.TAG_NAME, 'h1')
-    # assert "Text Box" in heading1.text
-
-    #Check page title (By CSS Selector)
     heading1 = WebDriverWait(chrome_webdriver, timeout=2).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'h1.text-center')))
     assert "Text Box" in heading1.text
 
@@ -112,7 +107,6 @@ def test_text_box_title(chrome_webdriver):
         ""
     ]
 
-    #Check Full Name entry
     for i in range(0, 4):
 
         check_entry(webdriver = chrome_webdriver, 
@@ -121,7 +115,7 @@ def test_text_box_title(chrome_webdriver):
                     label_text= label_text_values[i], 
                     text_area_placeholder= text_area_placeholder_values[i])
 
-    #STEP 2:
+    #STEP 2 - 5:
     text_values = [
         "Name Surname User 1",
         "name.surname@google.com",
