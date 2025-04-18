@@ -55,7 +55,7 @@ def enter_text_value(webdriver, text_area_id: str, text_value: str):
 
 def visual_comparison(webdriver, element_id: str):
 
-    element = WebDriverWait(webdriver, timeout=5).until(EC.visibility_of_element_located((By.ID, element_id)))
+    element = WebDriverWait(webdriver, timeout=10).until(EC.visibility_of_element_located((By.ID, element_id)))
     actual_image_path = "sources/actual_layouts/actual.png"
     actual_image_bytes = element.screenshot_as_png
 
