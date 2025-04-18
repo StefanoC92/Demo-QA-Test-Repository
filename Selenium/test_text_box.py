@@ -72,7 +72,7 @@ def visual_comparison(webdriver, element_id: str):
     match_result = ImageComparisonUtil.check_match(expected_image_path, actual_image_path)
     assert match_result
 
-def test_text_box_title(chrome_webdriver):
+def test_text_box_page(chrome_webdriver):
     """
         - DQTP-TC-1: Test Case to test the rendering and functionality of the submission form.
     """
